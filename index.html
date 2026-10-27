@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doce Raiz | Batata-doce fit</title>
+  <meta name="description" content="Snacks, pães e farinhas de batata-doce, sem açúcar refinado e com energia de verdade.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="#inicio" class="logo">Doce Raiz</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav id="menu">
+      <a href="#produtos">Produtos</a>
+      <a href="#beneficios">Por que batata-doce</a>
+      <a href="#receita">Receita</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="carrinho-btn" id="abrirCarrinho">Sacola <span id="contador">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <h1>Energia que vem da terra, sem açúcar refinado.</h1>
+        <p>Chips, pães, panquecas e farinha de batata-doce feitos em pequenos lotes. Carboidrato bom pro treino, pro café da manhã e pra aquela fome das três da tarde.</p>
+        <div class="hero-acoes">
+          <a href="#produtos" class="btn">Ver produtos</a>
+          <a href="#receita" class="btn btn-ghost">Receita do dia</a>
+        </div>
+      </div>
+      <div class="batata" aria-hidden="true">
+        <div class="casca"><div class="polpa"></div></div>
+        <span class="etiqueta">100% natural</span>
+      </div>
+    </section>
+
+    <section class="faixa" aria-label="Diferenciais">
+      <p>Sem glúten</p><p>Sem conservantes</p><p>Baixo índice glicêmico</p><p>Feito no forno, não frito</p>
+    </section>
+
+    <section id="produtos" class="secao">
+      <h2>Produtos</h2>
+      <div class="filtros" id="filtros">
+        <button class="ativo" data-cat="todos">Todos</button>
+        <button data-cat="snacks">Snacks</button>
+        <button data-cat="padaria">Padaria</button>
+        <button data-cat="pre-treino">Pré-treino</button>
+      </div>
+      <div class="grade" id="grade"></div>
+    </section>
+
+    <section id="beneficios" class="secao escura">
+      <h2>Por que batata-doce?</h2>
+      <div class="beneficios">
+        <article><strong>Energia que dura</strong><p>Carboidrato complexo libera energia aos poucos, sem pico e queda de açúcar.</p></article>
+        <article><strong>Saciedade</strong><p>As fibras seguram a fome por mais tempo entre as refeições.</p></article>
+        <article><strong>Rica em vitamina A</strong><p>O betacaroteno, que dá a cor alaranjada, é antioxidante.</p></article>
+        <article><strong>Versátil</strong><p>Vai do doce ao salgado: pão, panqueca, brownie, purê e chips.</p></article>
+      </div>
+    </section>
+
+    <section id="receita" class="secao receita">
+      <div>
+        <h2>Panqueca fit de batata-doce</h2>
+        <p class="sub">Pronta em 15 minutos. Rende 2 porções.</p>
+        <button class="btn" id="btnIngredientes">Mostrar ingredientes</button>
+      </div>
+      <div id="ingredientes" hidden>
+        <ul>
+          <li>1 batata-doce média cozida e amassada</li>
+          <li>2 ovos</li>
+          <li>3 colheres (sopa) de aveia</li>
+          <li>1 colher (chá) de canela</li>
+          <li>1 colher (chá) de fermento</li>
+        </ul>
+        <p>Misture tudo, doure em frigideira antiaderente por 2 minutos de cada lado e sirva com pasta de amendoim ou frutas.</p>
+      </div>
+    </section>
+
+    <section id="contato" class="secao">
+      <h2>Receba novidades e cupom de 10%</h2>
+      <form id="form" novalidate>
+        <input type="text" id="nome" placeholder="Seu nome" autocomplete="name" required>
+        <input type="email" id="email" placeholder="Seu e-mail" autocomplete="email" required>
+        <button class="btn" type="submit">Quero o cupom</button>
+        <p id="msg" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <span>© <span id="ano"></span> Doce Raiz</span>
+    <span>Feito com batata-doce, carinho e forno.</span>
+  </footer>
+
+  <div class="fundo" id="fundo"></div>
+  <aside class="gaveta" id="gaveta" aria-label="Sacola de compras" aria-hidden="true">
+    <div class="gaveta-topo"><h3>Sua sacola</h3><button id="fecharCarrinho" aria-label="Fechar">✕</button></div>
+    <ul id="itens"></ul>
+    <div class="gaveta-rodape">
+      <p>Total: <strong id="total">R$ 0,00</strong></p>
+      <button class="btn" id="finalizar">Finalizar pelo WhatsApp</button>
+      <button class="link" id="limpar">Esvaziar sacola</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
